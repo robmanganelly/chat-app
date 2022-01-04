@@ -1,0 +1,6 @@
+<mat-toolbar class="bottom-toolbar"  color="primary">
+  <textarea #msgContentRef style="width: 85%" matNativeControl placeholder="Text here..."></textarea> |
+  <button [disabled]="msgContentRef.value === ''" mat-icon-button (click)=" postMessage(msgContentRef)">
+    <mat-icon>send</mat-icon>
+  </button>
+</mat-toolbar>

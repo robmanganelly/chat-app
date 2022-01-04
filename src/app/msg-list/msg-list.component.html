@@ -1,0 +1,11 @@
+<div style="min-height: 100%;"
+     *ngIf="(currentConversationMessages.length > 0) else noMsgRef">
+  <div
+    [ngClass]="{'msg-left-container':(!message.owner), 'msg-right-container':message.owner}"
+    *ngFor="let message of currentConversationMessages" >
+    <app-msg-bubble [data]="message"></app-msg-bubble>
+  </div>
+</div>
+<ng-template #noMsgRef>
+  <div style="height: 100%"><p> This Chat is empty... </p></div>
+</ng-template>

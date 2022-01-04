@@ -1,0 +1,8 @@
+.bottom-toolbar{
+  position: sticky;
+  bottom: 0;
+}
+
+mat-toolbar button{
+  margin-left: auto;
+}

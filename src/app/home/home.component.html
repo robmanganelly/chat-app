@@ -1,0 +1,32 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="(isHandset$ | async) === false">
+    <app-side-toolbar></app-side-toolbar>
+    <mat-nav-list>
+      <!--        contact tiles here-->
+      <app-contact-tile></app-contact-tile>
+      <!--        contact tiles end -->
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        type="button">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <img src="assets/user-default.png " height="20rem" mat-card-avatar>
+      <span>{{openChat.to}}</span>
+    </mat-toolbar>
+    <!-- content  here -->
+    <app-msg-list></app-msg-list>
+    <!--    typing bar here-->
+    <app-bottom-toolbar></app-bottom-toolbar>
+    <!-- content ends  here -->
+  </mat-sidenav-content>
+</mat-sidenav-container>

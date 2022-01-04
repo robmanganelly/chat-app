@@ -1,0 +1,34 @@
+<mat-accordion >
+  <mat-expansion-panel  *ngFor="let room of  rooms">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <mat-icon *ngIf="room.flagged">done</mat-icon>
+        <img [src]="room.photo" class="message-avatar" mat-card-avatar>
+        {{ (room.username.length > 10 ? (room.username | slice:0:10) + '...' : (room.username))| uppercase }}
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <div>
+      <button
+        (click)="onFlagTile(room)"
+        mat-icon-button>
+        <mat-icon *ngIf="!room.flagged" >crop_din</mat-icon>
+        <mat-icon *ngIf="room.flagged">done_outline</mat-icon>
+      </button>
+      <button mat-icon-button>
+        <mat-icon>
+          visibility
+        </mat-icon>
+      </button >
+      <button mat-icon-button>
+        <mat-icon>
+          delete
+        </mat-icon>
+      </button>
+      <button mat-icon-button>
+        <mat-icon>
+          chevron_right
+        </mat-icon>
+      </button>
+    </div>
+  </mat-expansion-panel>
+</mat-accordion>

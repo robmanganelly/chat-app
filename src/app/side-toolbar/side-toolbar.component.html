@@ -1,0 +1,39 @@
+<mat-toolbar>
+  <mat-toolbar-row>
+    <img
+      mat-card-avatar [src]="'assets/user-default.png'"
+      alt="user profile avatar image">
+    {{(user.username ? user.username : 'Username') | uppercase}}
+    <button
+      mat-icon-button
+      style="margin-left: auto;"
+      (click)="hideOptions = !hideOptions">
+      <mat-icon>menu</mat-icon>
+    </button>
+  </mat-toolbar-row>
+  <mat-toolbar-row *ngIf="!hideOptions" >
+    <button mat-icon-button (click)="activateSelectFlag()">
+      <mat-icon *ngIf="AllCardsSelected else unselectedRef">done_outlined</mat-icon>
+      <ng-template #unselectedRef>
+        <mat-icon>
+          select_all
+        </mat-icon>
+      </ng-template>
+    </button>
+    <button mat-icon-button (click)="deleteFlagged()">
+      <mat-icon>add_circle_outlined</mat-icon>
+    </button>
+    <button mat-icon-button (click)="deleteFlagged()">
+      <mat-icon>delete_outlined</mat-icon>
+    </button>
+    <button mat-icon-button (click)="viewProfile()">
+      <mat-icon>visibility_outlined</mat-icon>
+    </button>
+    <button mat-icon-button (click)="createRoom()">
+      <mat-icon>search</mat-icon>
+    </button>
+    <button mat-icon-button (click)="createRoom()">
+      <mat-icon>contacts</mat-icon>
+    </button>
+  </mat-toolbar-row>
+</mat-toolbar>

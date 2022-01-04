@@ -1,0 +1,12 @@
+.msg-left-container{
+  margin-right: auto;
+  margin-bottom: 4px;
+  width: 60%;
+}
+.msg-right-container{
+  margin-left: auto;
+  margin-bottom: 4px;
+  width: 60%;
+}
+
+

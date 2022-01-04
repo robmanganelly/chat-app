@@ -1,0 +1,9 @@
+mat-toolbar {
+  background: inherit;
+}
+mat-toolbar mat-toolbar-row{
+  width: 100%;
+  justify-content: space-between;
+}
+
+
